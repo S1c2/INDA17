@@ -1,0 +1,134 @@
+
+*Exercise 2.44*
+
+Give the class two constructors. 
+One should take a single parameter that specifies the price,
+and the other should take no parameter and 
+set the price to be a default value of your choosing. 
+Test your implementation by creating machines via the 
+two different constructors.
+
+Version 2 of constructor:
+
+       public Ticketmachine(int specifyPrice)
+    {
+        price = specifyPrice;
+        balance = 0;
+        total = 0;
+   
+    }
+
+Version 3 of constructor:
+
+      public TicketMachine()
+    {
+        price = 100;
+        balance = 0;
+        total = 0;
+    }
+
+*Exercise 2.45*
+
+Implement a method empty, 
+that simulates the effect of removing all money from the machine. 
+This method should have a void return type, 
+and its body should simply set the total field to zero. 
+
+public void empty()
+{
+   total = 0;
+}
+
+Does this method need to take any parameters? 
+
+   -No it does not need to take any parameters
+
+Test your method by creating a machine, 
+inserting some money, printing some tickets, 
+checking the total, and then emptying the machine. 
+Is the empty method a mutator or an accessor?
+
+  - the empty method is a mutator, as it changes the value 
+  of a private field (variable)
+
+*Exercise 2.58*
+
+Why does the following version of refundBalance 
+not give the same results as the original?
+
+  - It will also set balance as equal to zero
+
+What tests can you run to demonstrate that it does not?
+
+  - When I keep refundBalance - I get the balance in accordance to
+  how much I have
+  - When I keep getBalance - the balance is always zero
+  - I can see this by creating a new machine, clicking on it and choosing
+  int refundBalance() or int getBalance() depending on which version I kept
+  in the source code
+
+  - otherwise in the code, before the line return balance;
+  I can add System.out.println(balance) and see
+  if the output is different
+  
+ 
+*Exercise 2.59*
+
+What happens if you try to compile the TicketMachine class with the
+following version of refundBalance?
+
+  -it does not compile and I get an error saying 
+  "unreachable statement"
+
+What do you know about return statements that helps
+to explain why this version does not compile?
+
+  - the return statement makes the program exit the method
+ 
+*Exercise 2.60*
+
+What is wrong with the following version of the constructor of TicketMachine?
+
+  - It does not output the actual price that you put in
+
+Try out this version in the better-ticket-machine project. 
+Does this version compile? 
+
+  - Yes
+
+Create an object and then inspect its fields. 
+Do you notice something wrong about the value of the 
+price field in the inspector with this version? 
+
+  - Yes, using (int price = cost;), instead of just (price = cost;) in the Better 
+  Ticket Machine shows that price is 0, when it should be 100 (or whatever we put in)
+
+Can you explain why this is?
+
+  - The field needs to be initialized before the constructor. 
+  Otherwise it is not recognized as a variable (this 
+  variable will be used in several following methods and
+  will be always call back to the constructor). Therefore it 
+  will always be as if it is constantly initialized when the 
+  constructor is called and price is not whatever it was that
+  we first said it was
+
+
+*Exercise 2.61*
+
+Add a new method, emptyMachine, that is designed to simulate emptying 
+the machine of money. It should reset total to be zero but also return 
+the value that was stored in total before it was reset.
+
+public void emptyMachine()
+
+{
+    
+    total = total + balance;
+    int beforeReset;
+    beforeReset = total;
+    System.out.println("Total before emptying machine: " + beforeReset);
+    total = 0;
+    System.out.println("Total now: " + total);
+    
+}

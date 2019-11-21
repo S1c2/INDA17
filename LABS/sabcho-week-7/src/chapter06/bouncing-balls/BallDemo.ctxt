@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=BallDemo
+comment1.params=
+comment1.target=BallDemo()
+comment1.text=\n\ Create\ a\ BallDemo\ object.\ Creates\ a\ fresh\ canvas\ and\ makes\ it\ visible.\n
+comment2.params=
+comment2.target=void\ bounceOriginal()
+comment3.params=nrOfBalls
+comment3.target=void\ bounce(int)
+comment4.params=nrOfBalls
+comment4.target=void\ bounce2(int)
+comment5.params=nrOfBalls
+comment5.target=void\ boxBounce(int)
+numComments=6
